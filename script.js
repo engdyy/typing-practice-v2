@@ -40,7 +40,7 @@ let timerInterval = null;
 let lastKeyCorrect = true;
 let whitelistMask = [];
 
-const defaultWhitelist = ["[KW]", "[TOPIC]"], "[KEYWORD]", "[TOPIC KEYWORD]";
+const defaultWhitelist = ["[KW]", "[TOPIC]"], "[KEYWORD]", "[TOPIC KEYWORD]"];
 whitelistInputEl.value = defaultWhitelist.join("\n");
 
 function getWhitelistFromUI() {
@@ -272,5 +272,6 @@ if (typingInputEl) {
     typingInputEl.value = "";
   });
 }
+
 
 
