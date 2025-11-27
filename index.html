@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luyện gõ văn bản</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>LUYỆN GÕ TEMPLATE</h1>
+      <p class="subtitle">
+        Dán đoạn văn, bấm bắt đầu và gõ theo. Ký tự cần gõ sẽ được tô vàng.
+      </p>
+    </header>
+
+    <section class="panel" id="sourcePanel">
+      <h2>Văn bản mẫu</h2>
+      <textarea id="sourceText" placeholder="Dán đoạn văn bạn muốn luyện..."></textarea>
+
+      <div class="buttons">
+        <button id="startBtn">Bắt đầu luyện</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+      </div>
+
+      <p class="hint">
+        Sau khi bấm <b>Bắt đầu luyện</b>, khung này sẽ ẩn đi.
+      </p>
+    </section>
+
+    <section class="panel" id="whitelistPanel">
+      <h2>Whitelist (bỏ qua khi gõ)</h2>
+      <textarea
+        id="whitelistInput"
+        placeholder="[KW]
+[TOPIC]
+,
+(space)"
+      ></textarea>
+      <p class="hint">
+        Hệ thống sẽ bỏ qua những mục này khi bạn gõ.
+      </p>
+    </section>
+
+    <section class="panel practice-panel hidden">
+      <div class="practice-header">
+        <div class="practice-header-right">
+          <button id="capsIndicator" class="caps-indicator">Caps Lock: OFF</button>
+          <span class="timer" id="timeElapsed">00:00.0</span>
+        </div>
+      </div>
+
+      <div class="practice-box" id="practiceBox">
+        <div id="practiceText" class="practice-text"></div>
+
+        <div class="progress-bar">
+          <div class="progress-bar-inner" id="progressBarInner"></div>
+        </div>
+      </div>
+
+      <div class="practice-actions">
+        <button id="retryBtn" class="ghost" style="display:none;">Luyện lại</button>
+        <button id="newTextBtn" class="ghost" style="display:none;">Đánh văn bản khác</button>
+      </div>
+      <input
+        id="typingInput"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+    </section>
+
+    <section class="panel stats">
+      <h2>Thống kê</h2>
+      <div class="stats-grid">
+        <div class="stat-item"><span class="label">Ký tự đúng</span><span id="correctChars">0</span></div>
+        <div class="stat-item"><span class="label">Ký tự sai</span><span id="errorChars">0</span></div>
+        <div class="stat-item"><span class="label">Tổng phím gõ</span><span id="totalKeys">0</span></div>
+        <div class="stat-item"><span class="label">Độ chính xác</span><span id="accuracy">0%</span></div>
+        <div class="stat-item"><span class="label">Tốc độ (WPM)</span><span id="wpm">0</span></div>
+        <div class="stat-item"><span class="label">Tiến độ</span><span id="progress">0 / 0</span></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
