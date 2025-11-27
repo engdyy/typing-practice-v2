@@ -204,7 +204,8 @@ newTextBtn.onclick = resetAll;
 
 if (practiceBoxEl && typingInputEl) {
   practiceBoxEl.onclick = () => {
-    focusTypingInput();
+    typingInputEl.focus();
+    typingInputEl.click();
   };
 }
 
@@ -271,3 +272,4 @@ if (typingInputEl) {
     typingInputEl.value = "";
   });
 }
+
