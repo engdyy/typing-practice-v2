@@ -176,11 +176,16 @@ function restartPractice() {
   focusTypingInput();
 }
 
-function resetAll() {
+function resetAll(clearWhitelist = true) {
   sourceTextEl.value = "";
-  whitelistInputEl.value = "";
+  if (clearWhitelist) {
+    whitelistInputEl.value = "";
+    whitelist = [];
+  } else {
+    whitelist = getWhitelistFromUI();
+  }
+
   referenceText = "";
-  whitelist = [];
   whitelistMask = [];
   resetStats();
 
@@ -198,9 +203,9 @@ function resetAll() {
 }
 
 document.getElementById("startBtn").onclick = startPractice;
-document.getElementById("resetBtn").onclick = resetAll;
+document.getElementById("resetBtn").onclick = () => resetAll(true);
 retryBtn.onclick = restartPractice;
-newTextBtn.onclick = resetAll;
+newTextBtn.onclick = () => resetAll(false);
 
 if (practiceBoxEl && typingInputEl) {
   practiceBoxEl.onclick = () => {
@@ -272,6 +277,7 @@ if (typingInputEl) {
     typingInputEl.value = "";
   });
 }
+
 
 
 
